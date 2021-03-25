@@ -23,6 +23,15 @@ function helloWorld(){
 
     }
 }
+function reverseString(){
+    let wordToBeReversed = getString();
+    let reversedString = wordToBeReversed.split('').reverse().join('');
+    displayStuff(reversedString);
+}
+function getString(){
+    let wordToBeReversed = prompt("Enter your word to be reversed.");
+    return wordToBeReversed;
+}
 function displayStuff(stuff){
     document.getElementById("JSpractice").innerHTML = stuff;
 }
