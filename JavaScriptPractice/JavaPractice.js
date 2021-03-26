@@ -52,7 +52,6 @@ function capitalizeTwoWords(){
     let indexOfSecondWord = indexOfSpace+1;
     let firstLetterOfString = wordsToCapitalize.charAt(0);
     let capitalFirstLet = firstLetterOfString.toUpperCase();
-    //wordsToCapitalize.replace(charAt(0), firstLetterOfString);
     var newString = wordsToCapitalize.replace(firstLetterOfString, capitalFirstLet);
     let secondLetterOfString = wordsToCapitalize.charAt(indexOfSecondWord);
     let capitalSecondLetter = secondLetterOfString.toUpperCase();
@@ -61,7 +60,25 @@ function capitalizeTwoWords(){
     displayCapitalizedWords(newStringTwo);
 
 }
+function compressString(){
+    let stbc = prompt("Enter some characters.");
+    let stringTbc = stbc.toString();
+     let unique = findUniqueChars(stringTbc);
+    
 
+    displayCompressedWords(unique);
+}
+function findUniqueChars(string)
+{
+ var stringTwo = string;
+ var uniqueCharacters = "";
+ for (var x = 0 ; x < stringTwo.length ; x++){
+    if (uniqueCharacters.indexOf(stringTwo.charAt(x)) == -1){
+        uniqueCharacters += stringTwo[x]; 
+    }
+ }
+   return uniqueCharacters;
+}  
 
 function displayStuff(stuff){
     document.getElementById("JSpractice").innerHTML = stuff;
@@ -69,7 +86,9 @@ function displayStuff(stuff){
 function displayCapitalizedWords(words){
     document.getElementById("capitalizedWords").innerHTML = words;
 }
-
+function displayCompressedWords(letters){
+    document.getElementById("compressedString").innerHTML = letters;
+}
 
 
 //let stringToBeReversed = inputOne;
